@@ -1,0 +1,30 @@
+body {
+    background-color: #b4057a;
+    color: white;
+}
+
+.ordem {
+    display: block;
+    margin-bottom: 5px;
+}
+input,
+textarea, select {
+    background: #ffcbee;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+}
+button{
+    background: #e60581;
+    border:none;
+    padding: 30px;
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 8px;
+}
+
+.espaco {
+    padding: 10px;
+}   
+

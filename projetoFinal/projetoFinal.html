@@ -4,13 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="projetoFinal.js"></script>
+    <link rel="stylesheet" type="text/css" href="projetoFinal.css">
     <title>Projeto Final Lógica de Programação</title>
 </head>
 <body>
+    <h1>Lista de Tarefas</h1>
+
+    <h2>Adicionar Tarefa</h2>
+
+        <p>Título da Tarefa: 
+            <input type="text" id="tituloAdd">
+        </p>
+        <p>Descrição da Tarefa:
+            <input type="text" id="descricaoAdd">
+        </p>
     <input type="button" value="Adicionar Tarefa" onclick="addTarefa()"> 
+
+    <h2>Editar Tarefa</h2>
+    <p>
+        Identicador da Tarefa(id):
+        <input type="text" id="idEditado">
+    </p>
+    <p>Título da Tarefa: 
+        <input type="text" id="tituloEditado">
+    </p>
+    <p>Descrição da Tarefa:
+        <input type="text" id="descricaoEditado">
+    </p>
     <input type="button" value="Editar Tarefa" onclick="editarTarefa()"> 
+
+    <h2>Remover Tarefa</h2>
+    <p>
+        Identicador da Tarefa(id):
+        <input type="text" id="idRemovido">
+    </p>
     <input type="button" value="Remover Tarefa" onclick="removerTarefa()"> 
+
+    <h2>Listar Tarefas</h2>
     <input type="button" value="Listar Tarefas" onclick="listarTarefas()">
+
+    <h2>Obter Tarefas:</h2>
+    <p>
+        Identicador da Tarefa(id):
+        <input type="text" id="idObtido">
+    </p>
     <input type="button" value="Obter Tarefa" onclick="obterTarefa()">
 
 </body>

@@ -2,8 +2,8 @@ let tarefas = [];
 let contador = 0;
 
 function addTarefa() {
-    let titulo = prompt('Digite um título:');
-    let descricao = prompt('Digite uma descrição:');
+    let titulo = document.getElementById('tituloAdd').value;
+    let descricao = document.getElementById('descricaoAdd').value;
     if (validarTarefas(titulo, descricao)) {
         let tarefa = {
             id: contador++,
@@ -11,25 +11,33 @@ function addTarefa() {
             descricao: descricao
         }
         tarefas.push(tarefa);
+        document.getElementById('tituloAdd').value="";
+        document.getElementById('descricaoAdd').value="";
     }
 
 }
 
 function editarTarefa() {
-    let titulo = prompt('Digite um título:');
-    let descricao = prompt('Digite uma descrição:');
+    let titulo = document.getElementById('tituloEditado').value;
+    let descricao = document.getElementById('descricaoEditado').value;
     if (validarTarefas(titulo, descricao)){
-        let id = Number(prompt('Digite a id que quer editar:'))
+        let id = Number(document.getElementById('idEditado').value);
         let tarefaAtual = tarefas[tarefas.findIndex(linha => linha.id === id)];
         tarefaAtual.titulo = titulo;
         tarefaAtual.descricao = descricao;
+        document.getElementById('tituloEditado').value="";
+        document.getElementById('descricaoEditado').value="";
+        document.getElementById('idEditado').value="";
     }
 }
 
 function removerTarefa() {
-    let id = Number(prompt('Digite a id que quer remover:'));
+    let id = Number(document.getElementById('idRemovido').value);
     let index = tarefas.findIndex(linha => linha.id === id);
-    tarefas.splice(index, 1);
+    if (index != -1) {
+        tarefas.splice(index, 1);
+        document.getElementById('idRemovido').value="";
+    }
 }
 
 function listarTarefas() {
@@ -37,12 +45,11 @@ function listarTarefas() {
 }
 
 function obterTarefa() {
-    let id = Number(prompt('Digite a id que quer obter:'));
+    let id = Number(document.getElementById('idObtido').value);
     let index = tarefas.findIndex(linha => linha.id === id);
     console.log(tarefas[index]);
+    document.getElementById('idObtido').value="";
 }
-
-//validações
 
 function validarTarefas(titulo, descricao) {
     try {
