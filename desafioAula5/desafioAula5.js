@@ -1,6 +1,17 @@
 // Solicitar ao usuário que informe peso e altura
-let peso = parseFloat(prompt("Informe seu peso em kg:"));
-let altura = parseFloat(prompt("Informe sua altura em metros:"));
+try {
+    let peso = parseFloat(prompt("Informe seu peso em kg:"));
+    let altura = parseFloat(prompt("Informe sua altura em metros:"));
+
+    if (isNaN(peso) || isNaN(altura)){
+        throw new Error('Por favor,insira valores válidos para altura e peso.')
+    }
+} catch(error) {
+    console.log("Ocorreu um erro: " + error.message)
+}
+finally {
+    console.log("Fim da operação!")
+}
 
 // Calcular o IMC
 let imc = peso / (altura * altura);
